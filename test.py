@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import requests
+import requests, json
 
 #r = requests.get('url', auth=('user', 'pass'))
 #r.status_code = 200
@@ -9,10 +9,11 @@ import requests
 #r.text = "{'x' : 'blahblahblah'}"
 #r.json() = {'x' : 'blahblahblah'}
 
+with open('creds.auth') as f:
+   creds = json.loads(f.read())
+   uname = creds['uname']
+   priv_key = creds['priv_key']
 
-with open('key.priv') as f:
-   priv_key = f.read()
-
-r = requests.get('https://us14.api.mailchimp.com/3.0/', user=priv_key)
+r = requests.get('https://us14.api.mailchimp.com/3.0/', auth=(uname, priv_key))
 print(r.text)
 
