@@ -3,7 +3,7 @@
 import requests, json
 
 with open('creds.mailgun.auth') as f:
-   mailgun_conf = json.loads(f.read())
+   mailgun_conf = json.loads(f.read().replace('\n', ''))
    #serv = mailgun_conf['serv']
    #api_key = mailgun_conf['api_key']
 default_from = "Business Cape Administrator <admin@businesscape.com>"
