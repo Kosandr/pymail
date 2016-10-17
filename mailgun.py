@@ -92,7 +92,7 @@ default_from = "Business Cape Administrator <admin@businesscape.com>"
 default_err = "Report this error to konstantin@businesscape.com"
 default_subject = "send_email() without subject. %s" % default_err
 default_content = "Error: send_email() called with empty content. %s" % default_err
-default_receiver = ["Konstantin Kowalski <konstantin@bussinescape.com", "kostelkow@gmail.com"]
+default_receiver = ["Konstantin Kowalski <konstantin@bussinescape.com"]
 
 #hardcode if forget and lose creds.mailgun.auth
 mailgun_conf['serv'] = "https://api.mailgun.net/v3/sandboxb8e5afad79bb4114ab8d3f3d11c15427.mailgun.org/messages"
@@ -118,17 +118,10 @@ def send_email_html(sender = default_from, receiver = default_receiver,
               "subject": subject,
               "html": content})
 
-receiver = "travis@businesscape.com"
+receiver = "Konstantin Kowalski <konstantin@businesscape.com>"
 html_content = "<h1>Hello this is HTML email test</h1> <img src='http://96bda424cfcc34d9dd1a-0a7f10f87519dba22d2dbc6233a731e5.r41.cf2.rackcdn.com/lakeanimalhospital/lake-animal-hospital/page-photos/img-puppy-kitten-pk.jpg'>"
 #send_email_html(subject="Testing sending HTML messages", content=html_content, receiver=receiver)
-#send_email(subject="Test", sender="kostelkow@gmail.com", receiver="kostelkow@gmail.com", content="ha")
-
-#"to": ["Konstantin Kowalski <konstantin@businesscape.com>, kostelkow@gmail.com"],
 
 #send_email()
-
 #"from": "<postmaster@sandboxb8e5afad79bb4114ab8d3f3d11c15427.mailgun.org>",
-#"to": ["Konstantin Kowalski <konstantin@businesscape.com>, kostelkow@gmail.com"], #, travis@businesscape.com"],
-#"to": "kostelkow@gmail.com",  #["Konstantin Kowalski <konstantin@businesscape.com>", "kostelkow@gmail.com", "travis@businesscape.com"], #"Konstantin Kowalski <konstantin@businesscape.com>",
-
 
