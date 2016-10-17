@@ -1,0 +1,25 @@
+https://apidocs.mailchimp.com/api/2.0/campaigns/create.php
+https://apidocs.mailchimp.com/api/2.0/
+https://apidocs.mailchimp.com/api/2.0/helper/generate-text.php
+http://docs.python-requests.org/en/master/user/quickstart/
+
+
+bad/meh:
+   https://apidocs.mailchimp.com/api/2.0/helper/generate-text.php
+   https://apidocs.mailchimp.com/api/2.0/lists/list.php
+   https://apidocs.mailchimp.com/api/2.0/
+   https://apidocs.mailchimp.com/api/2.0/helper/generate-text.php
+
+good:
+   http://kb.mailchimp.com/campaigns/archives/how-to-share-a-sent-campaign
+   http://kb.mailchimp.com/campaigns/ways-to-build/replicate-a-campaign-or-automation-workflow
+   #best
+   http://developer.mailchimp.com/documentation/mailchimp/reference/overview/#Conversations
+   https://apidocs.mailchimp.com/api/2.0/campaigns/send.php
+
+
+curl --request GET \
+   --url 'https://us14.api.mailchimp.com/3.0/' \
+   --user 'uname:key'
+
+

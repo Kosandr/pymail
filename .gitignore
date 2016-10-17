@@ -1,3 +1,4 @@
-creds.txt
-creds.auth
 *.swp
+__pycache__/
+creds.mailchimp.auth
+creds.mailgun.auth
