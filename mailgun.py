@@ -13,7 +13,7 @@ default_content = "Error: send_email() called with empty content. %s" % default_
 default_receiver = ["Konstantin Kowalski <konstantin@bussinescape.com"]
 
 #hardcode if forget and lose creds.mailgun.auth
-mailgun_conf['serv'] = "https://api.mailgun.net/v3/sandboxb8e5afad79bb4114ab8d3f3d11c15427.mailgun.org/messages"
+mailgun_conf['serv'] = "https://api.mailgun.net/v3/businesscape.com/messages"
 
 def send_email_text(sender = default_from, receiver = default_receiver,
                subject = default_subject, content = default_content):
