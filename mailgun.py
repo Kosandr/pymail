@@ -10,7 +10,7 @@ default_from = "Business Cape Administrator <admin@businesscape.com>"
 default_err = "Report this error to konstantin@businesscape.com"
 default_subject = "send_email() without subject. %s" % default_err
 default_content = "Error: send_email() called with empty content. %s" % default_err
-default_receiver = ["Konstantin Kowalski <konstantin@bussinescape.com"]
+default_receiver = ["Konstantin Kowalski <konstantin@bussinescape.com>"]
 
 #hardcode if forget and lose creds.mailgun.auth
 mailgun_conf['serv'] = "https://api.mailgun.net/v3/businesscape.com/messages"
