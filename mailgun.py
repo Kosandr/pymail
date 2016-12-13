@@ -2,7 +2,10 @@
 
 import requests, json
 
-with open('creds.mailgun.auth') as f:
+creds_path = '/sec/creds/'
+creds_fname = '/creds.mailgun.auth'
+
+with open(creds_path + creds_fname) as f:
    mailgun_conf = json.loads(f.read().replace('\n', ''))
    #serv = mailgun_conf['serv']
    #api_key = mailgun_conf['api_key']
@@ -10,7 +13,7 @@ default_from = "Business Cape Administrator <admin@businesscape.com>"
 default_err = "Report this error to konstantin@businesscape.com"
 default_subject = "send_email() without subject. %s" % default_err
 default_content = "Error: send_email() called with empty content. %s" % default_err
-default_receiver = ["Konstantin Kowalski <konstantin@bussinescape.com>"]
+default_receiver = ["Konstantin Kowalski <konstantin@businesscape.com>"]
 
 #hardcode if forget and lose creds.mailgun.auth
 mailgun_conf['serv'] = "https://api.mailgun.net/v3/businesscape.com/messages"
