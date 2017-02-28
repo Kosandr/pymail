@@ -18,26 +18,38 @@ default_receiver = ["Konstantin Kowalski <konstantin@businesscape.com>"]
 #hardcode if forget and lose creds.mailgun.auth
 mailgun_conf['serv'] = "https://api.mailgun.net/v3/businesscape.com/messages"
 
+def convert_recv(recv):
+   if typeof(recv) is str:
+      return recv
+   elif typeof(recv) is list:
+      return recv[:]
+
 def send_email_text(sender = default_from, receiver = default_receiver,
-               subject = default_subject, content = default_content):
-    return requests.post(
-        mailgun_conf['serv'],
-        auth=("api", mailgun_conf['api_key']),
-        data={"from": sender,
-              "to": receiver,
-              "subject": subject,
-              "text": content})
+                    subject = default_subject, content = default_content):
+
+   receivers = convert_recv(receiver)
+
+   return requests.post(
+      mailgun_conf['serv'],
+      auth=("api", mailgun_conf['api_key']),
+      data={"from": sender,
+            "to": receivers,
+            "subject": subject,
+            "text": content})
 
 #https://documentation.mailgun.com/api-sending.html#sending
 def send_email_html(sender = default_from, receiver = default_receiver,
-               subject = default_subject, content = default_content):
-    return requests.post(
-        mailgun_conf['serv'],
-        auth=("api", mailgun_conf['api_key']),
-        data={"from": sender,
-              "to": receiver,
-              "subject": subject,
-              "html": content})
+                    subject = default_subject, content = default_content):
+
+   receivers = convert_recv(receiver)
+
+   return requests.post(
+      mailgun_conf['serv'],
+      auth=("api", mailgun_conf['api_key']),
+      data={"from": sender,
+            "to": receivers,
+            "subject": subject,
+            "html": content})
 
 receiver = "Konstantin Kowalski <konstantin@businesscape.com>"
 html_content = "<h1>Hello this is HTML email test</h1> <img src='http://96bda424cfcc34d9dd1a-0a7f10f87519dba22d2dbc6233a731e5.r41.cf2.rackcdn.com/lakeanimalhospital/lake-animal-hospital/page-photos/img-puppy-kitten-pk.jpg'>"
