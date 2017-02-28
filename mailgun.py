@@ -9,6 +9,7 @@ with open(creds_path + creds_fname) as f:
    mailgun_conf = json.loads(f.read().replace('\n', ''))
    #serv = mailgun_conf['serv']
    #api_key = mailgun_conf['api_key']
+
 default_from = "Business Cape Administrator <admin@businesscape.com>"
 default_err = "Report this error to konstantin@businesscape.com"
 default_subject = "send_email() without subject. %s" % default_err
